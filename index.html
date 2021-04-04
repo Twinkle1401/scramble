@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- <script src="index.js"></script> -->
+</head>
+<body>
+    <header>
+        <h1>Play Scramble Game</h1>
+    </header>
+
+    <section>
+<div class="gameArea">
+    <h3 class="msg"></h3>
+    <input type="text" class="hidden">
+    <button class="btn"> Click here to Start </button>
+</div>
+    </section>
+
+    <script>
+const msg=document.querySelector('.msg');
+const guess=document.querySelector('input');
+const btn=document.querySelector('.btn');
+let play=false;
+let newWord="";
+let ranWord="";
+let sWords=['rohan','deepak','virat','ranbir','naman','sanjay','varun','alia','priyanka','siddharth','anushka','salman','shahrukh','shraddha']
+
+
+
+const createNewWord= () => {
+    let ranNum=Math.floor(Math.random() * sWords.length);
+
+    let newTempSWord = sWords[ranNum];
+    return newTempSWord;
+}
+
+
+
+const scrambleWords =(arr) => {
+    for (let i= arr.length - 1; i>0; i--){
+let temp=arr[i];
+let j=Math.floor(Math.random() * (i+1));
+
+arr[i]= arr[j];
+arr[j]=temp;
+    }
+
+    return arr;
+}
+
+
+
+btn.addEventListener('click', function(){
+if(!play){
+    play=true;
+    btn.innerHTML= "Guess";
+    guess.classList.toggle('hidden');
+    newWord= createNewWord();
+    ranWord= scrambleWords(newWord.split("")).join("");
+    msg.innerHTML = `Guess the word: ${ranWord}`;
+}
+else{
+    let tempWord=guess.value;
+    if(newWord===tempWord){
+        play=false;
+        msg.innerHTML= `Great!! Correct answer is ${newWord}`;
+        btn.innerHTML="Start Again";
+        guess.classList.toggle('hidden');
+        guess.value="";
+    }
+    else{
+        msg.innerHTML= `Sorry, Wrong answer. Please try again: ${ranWord}`; 
+        guess.value="";
+    }
+}
+})
+
+
+    </script>
+
+</body>
+</html>
