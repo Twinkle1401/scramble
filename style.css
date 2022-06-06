@@ -2,7 +2,8 @@
         header{
             width:100%;
             line-height:15vh;
-            background-color: #8e44ad;
+            background-color: #5d5c61;
+            /* background-color: #3fc1c9; */
         }
         h1{
             text-align: center;
@@ -11,12 +12,12 @@
             text-transform: uppercase;
             letter-spacing: 15px;
             font-family: 'Carter One', cursive;
-            text-shadow: 0 1px 0 #efefef,
-            0 1px 0 #efefef,
+            /* text-shadow: 0 1px 0 #b1a296; */
+            /* 0 1px 0 #efefef,
             0 2px 0 #efefef,
             0 3px 0 #efefef,
             0 3px 0 #efefef,
-            0 30px 5px rgba(0,0,0,0.1);
+            0 30px 5px rgba(0,0,0,0.1); */
         }
 
         section{
@@ -24,13 +25,13 @@
             display:flex;
             justify-content: center;
             align-items: center;
-            background-color: #9b59b6;
+            background-color: #b1a296;
         }
         .gameArea{
             width:50%;
             height:400px;
             padding: 20px 0;
-            background-color: #8e44ad;
+            background-color: #718492;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -51,7 +52,7 @@ font-size: 1.5rem;
             border-radius: 25px;
             outline: none;
             border: none;
-            background-color: #d6adea;
+            background-color: #b1a296;
             color:black;
             margin:2rem 0;
             font-size:1.1rem;
@@ -65,7 +66,8 @@ font-size: 1.5rem;
             border:#2f3542;
             margin-top:10px;
             color:black;
-            padding: 6px;
+            border-radius: 27px;
+            padding: 10px;
         }
         button .btn{
             font-weight: 600;
@@ -75,6 +77,7 @@ font-size: 1.5rem;
             transition-property: all;
             transition-duration: 0.5s;
             transition-timing-function: cubic-bezier(0.65,-0.25,0.25,1.95);
+            
             
         }
 
